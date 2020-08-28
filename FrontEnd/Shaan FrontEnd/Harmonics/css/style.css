@@ -56,6 +56,15 @@ body{
 	font-size: 13px;
 }
 
+.like {
+  color: grey;
+  left: 80%;
+  background-image: url(../images/explore/buttons/heart.png);
+  background-size:contain ;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
 
 /*==================================================
   Typography
