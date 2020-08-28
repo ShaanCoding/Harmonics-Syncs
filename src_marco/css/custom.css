@@ -3,12 +3,28 @@ body,html{
     height: 100%;
     
   }
+
+p {
+  color: white;
+}
   
   * {
     box-sizing: border-box;
   }
 
   
+  .square {
+    top: 8%;
+    height: 100%;
+    width: 70%;
+    background-color: black;
+    opacity: 70%;
+    position: absolute;
+    left: 15%;
+    transform: translate(0, 0%);
+}
+
+
   .bg-image {
     /* The image used */
     background-image: url(../assets/music_folder/album1.jpg);
@@ -27,6 +43,8 @@ body,html{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    z-index:-5
 
   }
 
@@ -42,7 +60,7 @@ body,html{
   
   /* Style the links inside the navigation bar */
   .topnav a {
-    float: left;
+    float: right;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -67,9 +85,128 @@ body,html{
     display: none;
   }
 
+  /* Centered section inside the top navigation */
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bio {
+  position: absolute;
+  border-style:solid;
+  border-color: white;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+ }
+
+ .btn {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  padding: 14px 28px;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* On mouse-over */
+.btn:hover {
+  background: #eee;
+  opacity: 40% ;
+}
+
+.like {
+  color: grey;
+  left: 80%;
+  background-image: url(../assets/icons/heart.png);
+  background-size:contain ;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  }
+  .like:hover {
+    background-image: url(../assets/icons/heart.png);
+    background-size:contain ;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    }
+
+  .dislike {
+    color: grey;
+    left: 20%;
+    background-image: url(../assets/icons/cross.png);
+    background-size:contain ;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    }
+    .dislike:hover {
+      background-image: url(../assets/icons/cross.png);
+      background-size:contain ;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+
+      }
+    .next_song {
+      color: grey;
+      left: 70%;
+      background-image: url(../assets/icons/next.png);
+      background-size:contain ;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+      }
+      .next_song:hover {
+        background-image: url(../assets/icons/next.png);
+        background-size:contain ;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        }
+      .previous_song {
+        color: grey;
+        left: 30%;
+        background-image: url(../assets/icons/previous.png);
+        background-size:contain ;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        }
+        .previous_song:hover {
+          background-image: url(../assets/icons/previous.png);
+          background-size:contain ;
+          background-position: center;
+          background-repeat: no-repeat;
+          
+          }
+        .play {
+          color: grey;
+          left: 50%;
+          background-image: url(../assets/icons/play.png);
+          background-size:contain ;
+          background-position: center;
+          background-repeat: no-repeat;
+          
+          }
+          .play:hover {
+            background-image: url(../assets/icons/play.png);
+            background-size:contain ;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            }
+
   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
+
     .topnav a.icon {
       float: right;
       display: block;
@@ -84,11 +221,21 @@ body,html{
       right: 0;
       top: 0;
     }
+
     .topnav.responsive a {
       float: none;
       display: block;
       text-align: left;
     }
+
+    .topnav-centered a {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
   }
+
+  
 
 @import "node_modules/bootstrap/scss/bootstrap";
