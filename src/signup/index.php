@@ -50,7 +50,10 @@
             echo "The password is incorrect, length must be greater than or equal to five, contain at least one uppercase letter and at least one number OR symbol </br>";
         }
 
-        
+        // TODO CREATE ACCOUNT VIA SQL QUERY
+        /*
+
+        */
 
         function usernameValidation($userName)
         {
