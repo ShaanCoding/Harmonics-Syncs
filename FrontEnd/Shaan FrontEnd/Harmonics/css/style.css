@@ -56,14 +56,70 @@ body{
 	font-size: 13px;
 }
 
-.like {
-  color: grey;
-  left: 80%;
+#exploreDev {
+  display: inline-block;
+  align-content: center;
+}
+
+#cross {
+  min-width: 75px;
+  color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: url(../images/explore/buttons/cross.png);
+  background-size:contain ;
+  background-position: center;
+  }
+
+#heart {
+  min-width: 75px;
+  color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
   background-image: url(../images/explore/buttons/heart.png);
   background-size:contain ;
   background-position: center;
-  background-repeat: no-repeat;
   }
+
+ #next {
+    min-width: 75px;
+    color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    background-image: url(../images/explore/buttons/next.png);
+    background-size:contain ;
+    background-position: center;
+    }
+
+  #back {
+      min-width: 75px;
+      color: transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      background-image: url(../images/explore/buttons/back.png);
+      background-size:contain ;
+      background-position: center;
+      }
+
+   #play {
+        min-width: 75px;
+        color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        background-image: url(../images/explore/buttons/play.png);
+        background-size:contain ;
+        background-position: center;
+        }
 
 
 /*==================================================

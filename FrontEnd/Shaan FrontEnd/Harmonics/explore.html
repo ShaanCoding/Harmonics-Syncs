@@ -11,7 +11,13 @@
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/ionicons.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="css/swipeleftright.css">
     
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
     
@@ -28,12 +34,6 @@
 
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="index-register.html"><img src="images/logo.png" alt="logo" /></a>
           </div>
 
@@ -73,13 +73,34 @@
         <div class="row">
             <div class="reg-form-container"> 
             
-              <!-- Put Code Here -->
-
-              <div class="row">
-                <div class="form-group col-xs-12">
-                  <button class="like">Login Now</button>
+              <div id="container">
+                <div class="buddy" style="display: block;">
+                    <div class="avatar" style="display: block; background-image: url(https://1.bp.blogspot.com/_qEbjiFbQWGM/TCBVlN3mkYI/AAAAAAAADCM/7CjYqUHwbgY/s1600/workshop_modell_0126.jpg)"></div>
                 </div>
+                <div class="buddy">
+                    <div class="avatar" style="display: block; background-image: url(http://static.stylemagazin.hu/medias/29280/Nem-ehezik-a-Women-of-the-Year-legjobb-modell-dijara-eselyes-szepseg_32fc7c86954a8847610499a0fc7261e2.jpg)"></div>
+                </div>
+                <div class="buddy">
+                    <div class="avatar" style="display: block; background-image: url(http://w1nd.cc/promo/347.jpg)"></div>
+                </div>
+                <div class="buddy">
+                    <div class="avatar" style="display: block; background-image: url(http://ell.h-cdn.co/assets/cm/15/01/54a769be3112d_-_elle-rata-insta-1-24375723.png)"></div>
+                </div>
+                <div class="buddy">
+                    <div class="avatar" style="display: block; background-image: url(http://hircsarda.hu/wp-content/uploads/2016/03/orban1.jpeg)"></div>
+                </div>
+            </div>
+
+              <!-- Put Code Here -->
+              <div id="exploreDev">
+                <button id="cross"></button>
+                <button id="back"></button>
+                <button id="play"></button>
+                <button id="next"></button>
+                <button id="heart"></button>
               </div>
+
+
 
             </div>
         </div>
@@ -93,7 +114,7 @@
     <script src="js/jquery.appear.min.js"></script>
 		<script src="js/jquery.incremental-counter.js"></script>
     <script src="js/script.js"></script>
-    
+    <script src="js/swipeleftright.js"></script>
 	</body>
 
 </html>
