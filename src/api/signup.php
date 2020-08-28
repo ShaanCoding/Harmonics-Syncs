@@ -15,6 +15,8 @@
  * genre: genre
  * songs: songs
  * level: level (beginner etc)
+ * 
+ * @author Jacky Wu
  */
 
  require_once("../include/users.php");

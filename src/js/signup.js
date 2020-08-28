@@ -1,21 +1,3 @@
-
-/**
- * API point for registrations
- * 
- * Method Id: 1
- * name: name
- * user: username
- * pass: password
- * roles: roless
- * instrument: instrument
- * gender: gender
- * bio: bio
- * pfp: pfp
- * genre: genre
- * songs: songs
- * level: level (beginner etc)
- */
-
 function add_user(_name, _username, _password, _roles, _instrument, _gender, _bio, _pfp, _genres, _songs, _level, callback) {
     contact_api(
 {
