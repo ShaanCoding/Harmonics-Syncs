@@ -67,9 +67,6 @@
     </form>
 
     <script src="swipeleftright.js"></script>
-
 </body>
-
-
 
 </html>

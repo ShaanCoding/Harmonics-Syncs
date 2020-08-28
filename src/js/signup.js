@@ -1,13 +1,45 @@
 
-function add_user(name, username, password)
-{
+/**
+ * API point for registrations
+ * 
+ * Method Id: 1
+ * name: name
+ * user: username
+ * pass: password
+ * roles: roless
+ * instrument: instrument
+ * gender: gender
+ * bio: bio
+ * pfp: pfp
+ * genre: genre
+ * songs: songs
+ * level: level (beginner etc)
+ */
 
+function add_user(_name, _username, _password, _roles, _instrument, _gender, _bio, _pfp, _genres, _songs, _level, callback) {
+    contact_api(
+{
+            m: 1,
+            name: _name,
+            user: _username,
+            pass: _password,
+            roles: _roles,
+            instrument: _instrument,
+            gender: _gender,
+            bio: _bio,
+            pfp: _pfp,
+            genre: _genres,
+            songs: _songs,
+            level: _level
+        },
+        callback
+    );
 }
 
 $(document).ready(
-    
+
     function () {
-        
+
         $("form").submit(
             function (e) {
                 e.preventDefault();
@@ -16,25 +48,25 @@ $(document).ready(
                 let user = $('#username').val();
                 let pass = $('#password').val();
                 let roles = $('#roles').val();
+                let instruments = $('#instruments').val();
                 let gender = $('#gender').val();
                 let bio = $('#biography').val();
                 let pfp = $('#profile').val();
-                let genres = $('#genres').val();
-                let songs = $('#songs').val();
-                let levels = $('#level').val();
+                let genres = $('#genres').val(); // convert to json
+                let songs = $('#songs').val(); // convert to json
+                let level = $('#level').val();
 
 
-                console.log(name);
-                console.log(user);
-                console.log(pass);
-                console.log(roles);
-                console.log(gender);
-                console.log(bio);
-                console.log(pfp);
-                console.log(genres);
-                console.log(songs);
-                console.log(levels);
-
+                add_user(name, user, pass, roles, instruments, gender, bio, pfp, genres, songs, level ,
+                    function (data, status) {
+                        if (status == 'success' && data == 'sucess') {
+                            // redirect to explore
+                            console.log("Added!");
+                        } else {
+                            // throw an error
+                            console.log(status);
+                        }
+                    });
 
             }
         );

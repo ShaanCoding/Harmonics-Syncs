@@ -37,9 +37,20 @@ require_once("../include/utils.php");
                 <td align="center"><input id="password" type="password" name="password" size="30" /></td>
             </tr>
 
+
             <tr>
                 <td>Roles:</td>
-                <td align="center"><input id="roles" type="text" name="roles" size="30" /></td>
+                <td align="center">
+                    <select id="roles" name="commitmentLevel">
+                        <option value="1">Arist</option>
+                        <option value="2">Producer</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Instruments:</td>
+                <td align="center"><input id="instruments" type="text" name="roles" size="30" /></td>
             </tr>
 
             <tr>
@@ -85,7 +96,7 @@ require_once("../include/utils.php");
 
             <tr>
                 <td align="center">
-                    <button>Submit<button>
+                    <button>Submit</button>
                 </td>
             </tr>
 
