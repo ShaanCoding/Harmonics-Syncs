@@ -90,11 +90,7 @@ if (ValidInput($user_check)) {
 // create the account
 
 $user_db->AddUser($name, $username, $password, $roles, $instrument, $gender, $bio, $pfp, $genre, $songs, $level);
-
 die("success");
-
-
-
 
 
 /*  Ignore this for now.

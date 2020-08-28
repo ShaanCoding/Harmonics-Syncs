@@ -36,33 +36,31 @@ if ($current_session) {
 
             if (GetIPAddress() == $current_session['ip']) {
                 // redirect to site
-                header('Location: ' . LOGIN_PAGE);
+                header('Location: ' . EXPLORE_PAGE);
             }
         }
     }
 }
 
-
 ?>
-
 <html>
-
 <head>
-    <title> Harmonics - Sign Up </title>
+    <title> Harmonics - Log in</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <form method="post">
+    <form method="get">
         <table border="0">
 
             <tr>
                 <td>Username:</td>
-                <td align="center"><input type="text" name="userName" size="30" /></td>
+                <td align="center"><input id="username" type="text" name="u" size="30" /></td>
             </tr>
 
             <tr>
                 <td>Password:</td>
-                <td align="center"><input type="password" name="password" size="30" /></td>
+                <td align="center"><input id="password" type="password" name="p" size="30" /></td>
             </tr>
 
             <tr>
@@ -76,3 +74,6 @@ if ($current_session) {
 </body>
 
 </html>
+
+<script src="../js/api.js"></script>
+<script src="../js/login.js"></script>

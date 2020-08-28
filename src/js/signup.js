@@ -41,12 +41,12 @@ $(document).ready(
 
                 add_user(name, user, pass, roles, instruments, gender, bio, pfp, genres, songs, level ,
                     function (data, status) {
-                        if (status == 'success' && data == 'sucess') {
+                        if (status == 'success' && data == 'success') {
                             // redirect to explore
                             console.log("Added!");
                         } else {
                             // throw an error
-                            console.log(status);
+                            console.log(data);
                         }
                     });
 

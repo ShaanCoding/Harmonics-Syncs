@@ -43,7 +43,8 @@ if (!password_verify($password, $stored_user['password'])) {
 $all_sessions = $session_db->ValidateSessions($stored_user['id']);
 
 /* add a new session and set it */
-$session_db->CreateSession($stored_user['id'], GetIPAddress());
-$_SESSION[$session_db->TOKEN_NAME] = Sessions::GenerateToken();
+$new_token = Sessions::GenerateToken();
+$session_db->CreateSession($stored_user['id'], GetIPAddress(), $new_token);
+$_SESSION[$session_db->TOKEN_NAME] = $new_token;
 
 die("success");

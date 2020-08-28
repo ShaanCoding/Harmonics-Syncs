@@ -33,13 +33,13 @@ class Sessions
      * 
      * take caution of calling this function without verification since we do not account for it here
      */
-    public function CreateSession($user_id, $ip)
+    public function CreateSession($user_id, $ip, $token)
     {
         $sql = $GLOBALS['db'];
         $create_session = $sql->prepare('INSERT INTO sessions (userid, ip, token, time, active) VALUES (:userid, :ip, :token, :time, :active)');
         $create_session->bindValue(':userid', $user_id);
         $create_session->bindValue(':ip', $ip);
-        $create_session->bindValue(':token', $this->GenerateToken());
+        $create_session->bindValue(':token', $token);
         $create_session->bindValue(':time', time());
         $create_session->bindValue(':active', 1);
         $create_session->execute();
@@ -98,6 +98,10 @@ class Sessions
      */
     public function HasSessionExpired($session)
     {
+        if (!$session['active']) {
+            return true;
+        }
+
         $expiry = $session['time'] + $this->EXPIRE_TIME;
         return (time() > $expiry);
     }
@@ -127,6 +131,7 @@ class Sessions
         if ($current_session) {
 
             $this->ValidateSessions($current_session['userid']); // automatically verifies the tokens
+            $current_session = $this->GetSessionFromToken($token); // update
 
             if (!$this->HasSessionExpired($current_session)) {
 
