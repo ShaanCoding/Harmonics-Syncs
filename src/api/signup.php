@@ -72,6 +72,9 @@ if (!ValidInput($level)) {
     die("Level not set");
 }
 
+// to-do 
+// verify that certain inputs are json decodable
+
 // check if user account does not already exist
 
 $user_db = new Users;
@@ -87,6 +90,10 @@ if (ValidInput($user_check)) {
 $user_db->AddUser($name, $username, $password, $roles, $instrument, $gender, $bio, $pfp, $genre, $songs, $level);
 
 die("success");
+
+
+
+
 
 /*  Ignore this for now.
 
