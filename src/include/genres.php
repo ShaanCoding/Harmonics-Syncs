@@ -8,21 +8,21 @@
  * @author Jacky Wu
  */
 
-require_once('../include/database.php');
+ require_once("database.php");
 
-class Users
+class Genres
 {
     /**
      * Gets all the users from the database
      * 
      * @return Array All the user functions stored as an array
      */
-    public function GetAllUsers()
+    public function GetAllGenres()
     {
         $sql = $GLOBALS['db'];
-        $get_users = $sql->prepare('SELECT * FROM users');
-        $get_users->execute();
-        return $get_users->fetchAll();
+        $get_genres = $sql->prepare('SELECT * FROM genres');
+        $get_genres->execute();
+        return $get_genres->fetchAll();
     }
 
 }
