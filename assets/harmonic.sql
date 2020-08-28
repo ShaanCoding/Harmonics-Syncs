@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 28, 2020 at 08:23 PM
+-- Generation Time: Aug 28, 2020 at 10:23 PM
 -- Server version: 8.0.21-0ubuntu0.20.04.4
 -- PHP Version: 7.4.3
 
@@ -32,7 +32,7 @@ CREATE TABLE `genres` (
   `id` int NOT NULL,
   `tag` varchar(255) NOT NULL,
   `active` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `genres`
@@ -52,7 +52,7 @@ CREATE TABLE `matches` (
   `user1` int NOT NULL,
   `user2` int NOT NULL,
   `active` int NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE `swipes` (
   `userid` int NOT NULL,
   `targetid` int NOT NULL,
   `swiped` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -76,6 +76,7 @@ CREATE TABLE `swipes` (
 CREATE TABLE `users` (
   `id` int NOT NULL,
   `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `roles` int NOT NULL,
   `instrument` varchar(500) NOT NULL,
@@ -86,7 +87,7 @@ CREATE TABLE `users` (
   `songs` varchar(999) NOT NULL,
   `level` int NOT NULL,
   `active` int NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables

@@ -3,12 +3,10 @@
 </html>
 
 <?php
-
 require_once("include/genres.php");
 
 $genre_db = new Genres;
 echo var_dump($genre_db->GetAllGenres());
-
 ?>
 
 <!doctype html>
@@ -21,6 +19,7 @@ echo var_dump($genre_db->GetAllGenres());
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
+
     <title>Hello, world!</title>
   </head>
   <body>

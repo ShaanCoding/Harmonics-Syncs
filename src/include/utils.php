@@ -1,13 +1,5 @@
 <?php
 
-/**
- * Returns the PDO connection for database queries
- */
-function GetSQL()
-{
-    return $GLOBALS['db'];
-}
-
 /* Hacks for XAMPP and later php versions */
 
 /**
