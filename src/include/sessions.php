@@ -18,8 +18,8 @@ class Sessions
 {
     /* session configuration */
 
-    private $EXPIRE_TOKEN = 1800;
-    private $TOKEN_VALUE = "token";
+    public $EXPIRE_TIME = 1800;
+    public $TOKEN_NAME = "token";
 
     public static function GenerateToken()
     {
@@ -59,7 +59,7 @@ class Sessions
 
 
     public function GetSessionFromToken($token)
-    {   
+    {
         $sql = $GLOBALS['db'];
         $get_sess = $sql->prepare('SELECT * FROM sessions WHERE token=:token');
         $get_sess->bindValue(':token', $token);
@@ -67,4 +67,77 @@ class Sessions
         return $get_sess->fetch();
     }
 
+    /**
+     * Returns a list of all sessions given a user id
+     */
+    public function GetAllSessionsFromUser($userid)
+    {
+        $sql = $GLOBALS['db'];
+        $get_sessions = $sql->prepare('SELECT * FROM sessions WHERE userid=:userid');
+        $get_sessions->bindValue(':userid', $userid);
+        $get_sessions->bindValue(':active', 1);
+        $get_sessions->execute();
+        return $get_sessions->fetchAll();
+    }
+
+    /**
+     * Returns a list of all active sessions given a user id
+     */
+    public function GetAllActiveSessionsFromUser($userid)
+    {
+        $sql = $GLOBALS['db'];
+        $get_sessions = $sql->prepare('SELECT * FROM sessions WHERE userid=:userid AND active=:active');
+        $get_sessions->bindValue(':userid', $userid);
+        $get_sessions->bindValue(':active', 1);
+        $get_sessions->execute();
+        return $get_sessions->fetchAll();
+    }
+
+    /**
+     * Returns true if a session has expire
+     */
+    public function HasSessionExpired($session)
+    {
+        $expiry = $session['time'] + $this->EXPIRE_TIME;
+        return (time() > $expiry);
+    }
+
+    /**
+     * Checks all users sessions and validates them
+     */
+    public function ValidateSessions($userid)
+    {
+        $all_sessions = $this->GetAllActiveSessionsFromUser($userid);
+
+        foreach ($all_sessions as $session) {
+
+            if ($this->HasSessionExpired($session)) {
+                $this->ToggleSession($session['id'], false);
+            }
+        }
+    }
+
+    /**
+     * Automatically redirects to log-in page if session is bad
+     */
+    public function RequireSession($token, $url, $ip)
+    {
+        $current_session = $this->GetSessionFromToken($token);
+
+        if ($current_session) {
+
+            $this->ValidateSessions($current_session['userid']); // automatically verifies the tokens
+
+            if (!$this->HasSessionExpired($current_session)) {
+
+                if ($ip == $current_session['ip']) {
+                    return; // continue as usual
+                }
+            }
+        }
+
+        // redirect 
+        header('Location: ' . $url);
+        die('');
+    }
 }

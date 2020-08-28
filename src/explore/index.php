@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * Swiping page for artist discovery
+ * 
+ * @author Jacky
+ */
+
+require_once("../include/sessions.php");
+require_once("../include/utils.php");
+
+/* require a login */
+$session_db = new Sessions;
+$current_token = ValidSession($session_db->TOKEN_NAME);
+$session_db->RequireSession($current_token, LOGIN_PAGE, GetIPAddress());
+
 ?>
 
 <html>
