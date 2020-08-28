@@ -9,7 +9,7 @@ function log_in(_user, _pass, callback) {
     );
 }
 
-function add_user(_name, _username, _password, _roles, _instrument, _gender, _bio, _pfp, _genres, _songs, _level, callback) {
+function add_user(_name, _username, _password, _roles, _gender, _bio, _pfp, _genres, _songs, _level, callback) {
     contact_api(
         {
             m: 1,
@@ -17,7 +17,6 @@ function add_user(_name, _username, _password, _roles, _instrument, _gender, _bi
             user: _username,
             pass: _password,
             roles: _roles,
-            instrument: _instrument,
             gender: _gender,
             bio: _bio,
             pfp: _pfp,
@@ -37,17 +36,16 @@ $(document).ready(
             function (e) {
                 e.preventDefault();
 
-                let name = $("#name").val();
-                let user = $('#username').val();
-                let pass = $('#password').val();
-                let roles = $('#roles').val();
-                let instruments = $('#instruments').val();
+                let name = $("#register-name").val();
+                let user = $('#register-username').val();
+                let pass = $('#register-password').val();
+                let roles = $('#register-role').val();
                 let gender = $('#gender').val();
-                let bio = $('#biography').val();
+                let bio = $('#register-bio').val();
                 let pfp = $('#profile').val();
-                let genres = $('#genres').val(); // convert to json
+                let genres = $('#register-genre').val(); // convert to json
                 let songs = $('#songs').val(); // convert to json
-                let level = $('#level').val();
+                let level = $('#register-level').val();
 
 
                 add_user(name, user, pass, roles, instruments, gender, bio, pfp, genres, songs, level,

@@ -52,6 +52,7 @@ if ($current_session) {
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/ionicons.min.css" />
   <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../css/custom.css">
 
   <!--Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
@@ -135,12 +136,14 @@ if ($current_session) {
               <form name="registration_form" id='registration_form' class="form-inline">
                 <div class="row">
                   <div class="form-group col-xs-6">
-                    <label for="register-username" class="sr-only">Username</label>
-                    <input id="register-username" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name" />
-                  </div>
-                  <div class="form-group col-xs-6">
                     <label for="register-name" class="sr-only">Full name</label>
-                    <input id="register-name" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name" />
+                    <input id="register-name" class="form-control input-group-lg" type="text" name="name" title="Enter last name" placeholder="Full name" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-6">
+                    <label for="register-name" class="sr-only">Username</label>
+                    <input id="register-username" class="form-control input-group-lg" type="text" name="username" title="Enter user name" placeholder="User name" />
                   </div>
                 </div>
                 <div class="row">
@@ -151,64 +154,79 @@ if ($current_session) {
                 </div>
                 <div class="row">
                   <p class="birth"><strong>Tell us a bit more about yourself</strong></p>
-                  <div>
-                    <label for="month" class="sr-only"></label>
-                    <select class="form-control" id="register-level">
-                      <option value="Commitment Level" disabled selected>Commitment Level</option>
-                      <option value="1">Amateur</option>
-                      <option value="2">Professional</option>
-                    </select>
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+                      <label for="register-name" class="sr-only">Bio</label>
+                      <input id="register-bio" class="form-control input-group-lg" type="text" name="Bio" title="Enter Bio" placeholder="Bio" />
+                    </div>
                   </div>
-                  <div>
-                    <label for="month" class="sr-only"></label>
-                    <select class="form-control" id="speciality">
-                      <option value="Commitment Level" disabled selected>Speciality</option>
-                      <option>Vocal</option>
-                      <option>Instrumental</option>
-                      <option>Producer</option>
-                    </select>
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+                      <label for="month" class="sr-only"></label>
+                      <select class="form-control" id="register-level">
+                        <option value="Commitment Level" disabled selected>Commitment Level</option>
+                        <option value="1">Amateur</option>
+                        <option value="2">Professional</option>
+                      </select>
+                    </div>
                   </div>
-                  <div>
-                    <label for="month" class="sr-only"></label>
-                    <select class="form-control" id="genre">
-                      <option value="Commitment Level" disabled selected>Genre</option>
-                      <option>Lo-Fi</option>
-                      <option>Swing</option>
-                      <option>EDM</option>
-                      <option>Classical</option>
-                    </select>
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+
+                      <label for="month" class="sr-only"></label>
+                      <select class="form-control" id="register-role">
+                        <option value="Role" disabled selected>Role</option>
+                        <option>Vocal</option>
+                        <option>Instrumental</option>
+                        <option>Producer</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+                      <label for="month" class="sr-only"></label>
+                      <select class="form-control" id="register-genre">
+                        <option value="Genre" disabled selected>Genre</option>
+                        <option>Lo-Fi</option>
+                        <option>Swing</option>
+                        <option>EDM</option>
+                        <option>Classical</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group gender">
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio" checked>Male
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio">Female
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio">Other
+                    </label>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+
+                      <p class="birth"><strong>What genre of artist are you looking for?</strong></p>
+                      <div>
+                        <label for="month" class="sr-only"></label>
+                        <select class="form-control" id="register-target-genre">
+                          <option value="Target Genre" disabled selected>Wanted Genre</option>
+                          <option>Lo-Fi</option>
+                          <option>Swing</option>
+                          <option>EDM</option>
+                          <option>Classical</option>
+                        </select>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                <div class="form-group gender">
-                  <label class="radio-inline">
-                    <input type="radio" name="optradio" checked>Male
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="optradio">Female
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="optradio">Other
-                  </label>
-                </div>
-
-                <div class="row">
-                  <p class="birth"><strong>What genre of artist are you looking for?</strong></p>
-                  <div>
-                    <label for="month" class="sr-only"></label>
-                    <select class="form-control" id="wantedGenre">
-                      <option value="Commitment Level" disabled selected>Wanted Genre</option>
-                      <option>Lo-Fi</option>
-                      <option>Swing</option>
-                      <option>EDM</option>
-                      <option>Classical</option>
-                    </select>
-                  </div>
-                </div>
-
               </form>
               <!--Register Now Form Ends-->
-              <p><a href="#">Already have an account?</a></p>
+              <p></p>
               <button class="btn btn-primary">Register Now</button>
             </div>
             <!--Registration Form Contents Ends-->
