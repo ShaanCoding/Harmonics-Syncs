@@ -27,7 +27,7 @@ p {
 
   .bg-image {
     /* The image used */
-    background-image: url(../assets/music_folder/album1.jpg);
+    background-image: url(../assets/explore/musicFolder/album1.jpg);
   
     /* Add the blur effect */
     filter: blur(2px);
@@ -123,14 +123,14 @@ p {
 .like {
   color: grey;
   left: 80%;
-  background-image: url(../assets/icons/heart.png);
+  background-image: url(../assets/explore/buttons/heart.png);
   background-size:contain ;
   background-position: center;
   background-repeat: no-repeat;
   
   }
   .like:hover {
-    background-image: url(../assets/icons/heart.png);
+    background-image: url(../assets/explore/buttons/heart.png);
     background-size:contain ;
     background-position: center;
     background-repeat: no-repeat;
@@ -140,14 +140,14 @@ p {
   .dislike {
     color: grey;
     left: 20%;
-    background-image: url(../assets/icons/cross.png);
+    background-image: url(../assets/explore/buttons/cross.png);
     background-size:contain ;
     background-position: center;
     background-repeat: no-repeat;
     
     }
     .dislike:hover {
-      background-image: url(../assets/icons/cross.png);
+      background-image: url(../assets/explore/buttons/cross.png);
       background-size:contain ;
       background-position: center;
       background-repeat: no-repeat;
@@ -157,14 +157,14 @@ p {
     .next_song {
       color: grey;
       left: 70%;
-      background-image: url(../assets/icons/next.png);
+      background-image: url(../assets/explore/buttons/next.png);
       background-size:contain ;
       background-position: center;
       background-repeat: no-repeat;
       
       }
       .next_song:hover {
-        background-image: url(../assets/icons/next.png);
+        background-image: url(../assets/explore/buttons/next.png);
         background-size:contain ;
         background-position: center;
         background-repeat: no-repeat;
@@ -173,14 +173,14 @@ p {
       .previous_song {
         color: grey;
         left: 30%;
-        background-image: url(../assets/icons/previous.png);
+        background-image: url(../assets/explore/buttons/previous.png);
         background-size:contain ;
         background-position: center;
         background-repeat: no-repeat;
         
         }
         .previous_song:hover {
-          background-image: url(../assets/icons/previous.png);
+          background-image: url(../assets/explore/buttons/previous.png);
           background-size:contain ;
           background-position: center;
           background-repeat: no-repeat;
@@ -189,14 +189,14 @@ p {
         .play {
           color: grey;
           left: 50%;
-          background-image: url(../assets/icons/play.png);
+          background-image: url(../assets/explore/buttons/play.png);
           background-size:contain ;
           background-position: center;
           background-repeat: no-repeat;
           
           }
           .play:hover {
-            background-image: url(../assets/icons/play.png);
+            background-image: url(../assets/explore/buttons/play.png);
             background-size:contain ;
             background-position: center;
             background-repeat: no-repeat;
