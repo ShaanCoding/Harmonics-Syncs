@@ -70,6 +70,7 @@ h1 {
     margin-right: 0;
     font-weight: normal;
     position: fixed;
+    text-align: center;
     left: 50%;
     top: 30%;
     transform: translate(-50%);
@@ -95,9 +96,9 @@ h1 {
   }
 
   .start{
-    position: absolute;
+    position: fixed;
     left:50%;
-    top: 70%;
+    top: 85%;
     border-radius: 50px;
   }
 
