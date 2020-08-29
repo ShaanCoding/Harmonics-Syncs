@@ -12,12 +12,12 @@ This application was made for the USYD SYNCS 2020 Hackathon. This application wa
 
 ## Authors
 
-* **Jacky Wu** - Technical Lead, Back End Developer, Front End Developer & Server Management
-* **Shaan Khan** - Project Management / Scrum Master, Back End Development, Front End Development, Presentation & GitHub Management
-* **Alex Titchen** - Graphics Design, Presentation, Wire Frame, Screen Design, Mockups
+* **Jacky Wu** - [@qtKite](https://github.com/qtKite) - Technical Lead, Back End Developer, Front End Developer & Server Management
+* **Shaan Khan** - [@ShaanCoding](https://github.com/ShaanCoding) - Project Management / Scrum Master, Back End Development, Front End Development, Presentation & GitHub Management
+* **Alex Titchen** - [@atitchen](https://github.com/atitchen) - Graphics Design, Presentation, Wire Frame, Screen Design, Mockups
 * **Athena Kam** - Graphics Design, Wire Frame, Screen Design, UI, Mockups, Presentation, Project Director
-* **Marco Tupaz** - Lead Front End Developer
-* **J.T. Ong** - Front End Development, Project Management, Administration Work
+* **Marco Tupaz** - [@ma-2pac](https://github.com/ma-2pac) - Lead Front End Developer
+* **J.T. Ong** - [@agentdisguises-little-brother](https://github.com/agentdisguises-little-brother) - Front End Development, Project Management, Administration Work
 
 ## Acknowledgements
 
