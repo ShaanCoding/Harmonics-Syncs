@@ -49,6 +49,17 @@ html, body {
   width: 100%;
 }
 
+.square {
+  top: 52.5px;
+  height: 93%;
+  width: 70%;
+  background-color: black;
+  opacity: 30%;
+  position: absolute;
+  left: 15%;
+  transform: translate(0, 0%);
+}
+
 body{
 	font-family: 'Lato', sans-serif;
   line-height: 26px;
