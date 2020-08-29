@@ -80,6 +80,7 @@ p {
 .topnav {
     background-color: #333;
     overflow: hidden;
+    z-index: 20;
   }
   
   /* Style the links inside the navigation bar */
@@ -127,7 +128,7 @@ p {
   position: absolute;
   border-style:solid;
   border-color: white;
-  top: 90%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
 
