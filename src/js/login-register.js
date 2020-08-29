@@ -31,34 +31,62 @@ function add_user(_name, _username, _password, _roles, _gender, _bio, _pfp, _gen
 $(document).ready(
 
     function () {
-        
+
         $("#registration_form").submit(
             function (e) {
+
                 e.preventDefault();
 
                 let name = $("#register-name").val();
                 let user = $('#register-username').val();
                 let pass = $('#register-password').val();
                 let roles = $('#register-role').val();
-                let gender = $('#gender').val();
+
+                let gender = 0;
+
+                if (document.getElementById('register-gender-1').checked) {
+                    gender = 1;
+                } else if (document.getElementById('register-gender-2').checked) {
+                    gender = 2;
+                } else if (document.getElementById('register-gender-3').checked) {
+                    gender = 3; // other
+                }
+
                 let bio = $('#register-bio').val();
-                let pfp = $('#profile').val();
+                let pfp = $('#register-pfp').val();
                 let genres = $('#register-genre').val(); // convert to json
-                let songs = $('#songs').val(); // convert to json
+                let songs = $('#register-song').val(); // convert to json
                 let level = $('#register-level').val();
 
+                // log it first
 
-                add_user(name, user, pass, roles, instruments, gender, bio, pfp, genres, songs, level,
+                console.log(name);
+                console.log(user);
+                console.log(pass);
+                console.log(roles);
+                console.log(gender);
+                console.log(bio);
+                console.log(pfp);
+                console.log(genres);
+                console.log(songs);
+                console.log(level);
+
+
+                add_user(name, user, pass, roles, gender, bio, pfp, genres, songs, level,
                     function (data, status) {
                         if (status == 'success' && data == 'success') {
-                            // redirect to explore
-                            console.log("Added!");
+
+                            log_in(user, pass, function (data, status) {
+                                if (status == "success" && data == "success") {
+                                    window.location.href = "../explore/index.php";
+                                } else {
+                                    console.log(data);
+                                }
+                            });
                         } else {
-                            // throw an error
                             console.log(data);
                         }
                     });
-
             }
         );
 

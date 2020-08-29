@@ -6,11 +6,12 @@
 
 require_once("../include/utils.php");
 require_once("../include/sessions.php");
-
+require_once("../include/genres.php");
 
 /* check if the user has a token, if they do then verify it and proceed - or disable and login again
    to verify the token, the current ip must match the active session */
 
+$genres_db = new Genres;
 $session_db = new Sessions;
 
 $user_token = ValidSession($session_db->TOKEN_NAME);
@@ -129,27 +130,33 @@ if ($current_session) {
           <!--Registration Form Contents-->
           <div class="tab-content">
             <div class="tab-pane active" id="register">
-              <h3>Register Now !!!</h3>
-              <p class="text-muted">Be cool and join today. Meet millions</p>
+              <h3>Register</h3>
+              <p class="text-muted">Connect with artists around the world.</p>
 
               <!--Register Form-->
               <form name="registration_form" id='registration_form' class="form-inline">
                 <div class="row">
                   <div class="form-group col-xs-6">
                     <label for="register-name" class="sr-only">Full name</label>
-                    <input id="register-name" class="form-control input-group-lg" type="text" name="name" title="Enter last name" placeholder="Full name" />
+                    <input required id="register-name" class="form-control input-group-lg" type="text" name="name" title="Enter last name" placeholder="Full name" />
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-xs-6">
                     <label for="register-name" class="sr-only">Username</label>
-                    <input id="register-username" class="form-control input-group-lg" type="text" name="username" title="Enter user name" placeholder="User name" />
+                    <input required id="register-username" class="form-control input-group-lg" type="text" name="username" title="Enter user name" placeholder="User name" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="form-group col-xs-12">
+                  <div class="form-group col-xs-6">
                     <label for="register-password" class="sr-only">Password</label>
-                    <input id="register-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" />
+                    <input required id="register-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-xs-6">
+                    <label for="register-pfp" class="sr-only">Profile Image</label>
+                    <input required id="register-pfp" class="form-control input-group-lg" type="text" name="pfp" title="Enter pfp" placeholder="Image link" />
                   </div>
                 </div>
                 <div class="row">
@@ -163,8 +170,8 @@ if ($current_session) {
                   <div class="row">
                     <div class="form-group col-xs-6">
                       <label for="month" class="sr-only"></label>
-                      <select class="form-control" id="register-level">
-                        <option value="Commitment Level" disabled selected>Commitment Level</option>
+                      <select required class="form-control" id="register-level">
+                        <option value="Skill Level" disabled selected>Skill Level</option>
                         <option value="1">Amateur</option>
                         <option value="2">Professional</option>
                       </select>
@@ -174,37 +181,46 @@ if ($current_session) {
                     <div class="form-group col-xs-6">
 
                       <label for="month" class="sr-only"></label>
-                      <select class="form-control" id="register-role">
+                      <select required class="form-control" id="register-role">
                         <option value="Role" disabled selected>Role</option>
-                        <option>Vocal</option>
-                        <option>Instrumental</option>
-                        <option>Producer</option>
+                        <option value="1">Vocal</option>
+                        <option value="2">Instrumental</option>
+                        <option value="3">Producer</option>
                       </select>
                     </div>
                   </div>
                   <div class="row">
                     <div class="form-group col-xs-6">
                       <label for="month" class="sr-only"></label>
-                      <select class="form-control" id="register-genre">
+                      <select required class="form-control" id="register-genre">
                         <option value="Genre" disabled selected>Genre</option>
-                        <option>Lo-Fi</option>
-                        <option>Swing</option>
-                        <option>EDM</option>
-                        <option>Classical</option>
+                        <?php
+                        $valindex = 0;
+                        foreach ($genres_db->GetAllGenres() as $genre) {
+                          $valindex += 1;
+                        ?>
+                          <option value="<?= $valindex ?>"><?= $genre['tag'] ?></option>
+                        <?php } ?>
                       </select>
                     </div>
                   </div>
-
                   <div class="form-group gender">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio" checked>Male
+                      <input id="register-gender-1" value="1" type="radio" name="optradio" checked>Male
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="optradio">Female
+                      <input id="register-gender-2" value="2" type="radio" name="optradio">Female
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="optradio">Other
+                      <input id="register-gender-3" value="3" type="radio" name="optradio">Other
                     </label>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+                      <label for="register-song" class="sr-only">Sound cloud song</label>
+                      <input id="register-song" class="form-control input-group-lg" type="text" name="song" title="Enter song" placeholder="Link a song" />
+                    </div>
                   </div>
 
                   <div class="row">
@@ -213,21 +229,26 @@ if ($current_session) {
                       <p class="birth"><strong>What genre of artist are you looking for?</strong></p>
                       <div>
                         <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="register-target-genre">
+                        <select required class="form-control" id="register-target-genre">
                           <option value="Target Genre" disabled selected>Wanted Genre</option>
-                          <option>Lo-Fi</option>
-                          <option>Swing</option>
-                          <option>EDM</option>
-                          <option>Classical</option>
+                          <?php
+                          $valindex = 0;
+                          foreach ($genres_db->GetAllGenres() as $genre) {
+                            $valindex += 1;
+                          ?>
+                            <option value="<?= $valindex ?>"><?= $genre['tag'] ?></option>
+                          <?php } ?>
                         </select>
                       </div>
                     </div>
                   </div>
                 </div>
+                <p></p>
+
+                <button class="btn btn-primary">Register Now</button>
+
               </form>
               <!--Register Now Form Ends-->
-              <p></p>
-              <button class="btn btn-primary">Register Now</button>
             </div>
             <!--Registration Form Contents Ends-->
 
@@ -239,13 +260,13 @@ if ($current_session) {
               <!--Login Form-->
               <form id='Login_form' method="get">
                 <div class="row">
-                  <div class="form-group col-xs-12">
+                  <div class="form-group col-xs-6">
                     <label for="login-username" class="sr-only">Username</label>
                     <input id="login-username" class="form-control input-group-lg" type="text" name="text" title="Enter Username" placeholder="Your Username" />
                   </div>
                 </div>
                 <div class="row">
-                  <div class="form-group col-xs-12">
+                  <div class="form-group col-xs-6">
                     <label for="login-password" class="sr-only">Password</label>
                     <input id="login-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password" />
                   </div>

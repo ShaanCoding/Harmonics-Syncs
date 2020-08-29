@@ -25,7 +25,6 @@ $name = ValidGet("name");
 $username = ValidGet("user");
 $password = ValidGet("pass");
 $roles = ValidGet("roles");
-$instrument = ValidGet("instrument");
 $gender = ValidGet("gender");
 $bio = ValidGet("bio");
 $pfp = ValidGet("pfp");
@@ -48,10 +47,6 @@ if (!ValidInput($password)) {
 
 if (!ValidInput($roles)) {
     die("Roles not set");
-}
-
-if (!ValidInput($instrument)) {
-    die("Instrument not set");
 }
 
 if (!ValidInput($gender)) {
