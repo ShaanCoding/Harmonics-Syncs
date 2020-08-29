@@ -5,6 +5,7 @@
  * 
  * contains all the util functions to interact with the users database
  * 
+ * @author Jacky Wu
  * @author Shaan Khan
  */
 
@@ -12,7 +13,6 @@ require_once('../include/database.php');
 
 class Swipes
 {
-    //Returns @return Array
     public function GetAllSwipes()
     {
         $sql = $GLOBALS['db'];
@@ -31,16 +31,12 @@ class Swipes
         $add_swipe->execute();
     }
 
-    //Change swipedState(ID, state)
-    public function EditSwipeState($id, $swipedState)
+    public function ToggleSwipe($id, $state)
     {
         $sql = $GLOBALS['db'];
         $update_swipestate = $sql->prepare('UPDATE swipes SET swiped=:swiped WHERE id=:id');
-        $update_swipestate->bindValue(':swiped', $swipedState);
+        $update_swipestate->bindValue(':swiped', $state ? 1 : 0);
         $update_swipestate->bindValue(':id', $id);
         $update_swipestate->execute();
     }
 }
-
-
-?>

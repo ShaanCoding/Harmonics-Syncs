@@ -30,15 +30,14 @@ class Users
      * 
      * @param password automatically handles bcrypt hashing at 10 rounds
      */
-    public function AddUser($name, $username, $password, $roles, $instrument, $gender, $bio, $pfp, $genre, $songs, $level)
+    public function AddUser($name, $username, $password, $roles, $gender, $bio, $pfp, $genre, $songs, $level)
     {
         $sql = $GLOBALS['db'];
-        $add_user = $sql->prepare('INSERT INTO users (name, username, password, roles, instrument, gender, bio, pfp, genre, songs, level, active) VALUES (:name, :username, :password, :roles, :instrument, :gender, :bio, :pfp, :genre, :songs, :level, :active)');
+        $add_user = $sql->prepare('INSERT INTO users (name, username, password, roles, gender, bio, pfp, genre, songs, level, active) VALUES (:name, :username, :password, :roles, :gender, :bio, :pfp, :genre, :songs, :level, :active)');
         $add_user->bindValue(':name', $name);
         $add_user->bindValue(':username', $username);
         $add_user->bindValue(':password', password_hash($password, PASSWORD_DEFAULT));
         $add_user->bindValue(':roles', $roles);
-        $add_user->bindValue(':instrument', $instrument);
         $add_user->bindValue(':gender', $gender);
         $add_user->bindValue(':bio', $bio);
         $add_user->bindValue(':pfp', $pfp);
