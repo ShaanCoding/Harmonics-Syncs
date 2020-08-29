@@ -2806,52 +2806,40 @@ ul.contact li i{
   transform: translateY(-50%);
 }
 
-/* Style the form */
-#regForm {
-  background-color: #ffffff;
-  margin: 100px auto;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
+label{font-family:arial; font-size:.8em; color: black}
+input::placeholder{
+  color: black;
+}
+input{border:none;}
+input:focus{outline:none;}
+
+.field{
+  padding-bottom: 20px;
+  left: 50%;
+  transform: translate(50%);
 }
 
-/* Style the input fields */
-input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-}
+.logo {
+  /* The image used */
+  background-image: url(../assets/icons/harmonics.png);
 
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
+  /* Full height */
+  height: 30%;
+  width: 60%;
 
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #4CAF50;
-}
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+    
+  /* background color*/
+  background-color: transparent; 
+  
+  /* Center and scale the image nicely */
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: relative;
+  z-index:20;
+  
+    }
