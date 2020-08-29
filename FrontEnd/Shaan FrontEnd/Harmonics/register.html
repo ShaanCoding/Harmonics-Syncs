@@ -1,3 +1,8 @@
+<!-- Based off code from 
+  -W3Schools https://www.w3schools.com/
+  -Courseto https://coursetro.com/posts/code/130/Learn-Bootstrap-4-Final-in-2018-with-our-Free-Crash-Course
+  -CodingNepal https://www.youtube.com/watch?v=UldBI0fdMJw&t=2s
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,120 +80,123 @@
 
     <!--Header End-->
 
+
+
     <div id="lp-register">
-    	<div class="container wrapper">
-        <div class="row">
-        
-            <div class="reg-form-container"> 
-            
-              <!-- Register/Login Tabs-->
-              <div class="reg-options">
-                <ul class="nav nav-tabs">
-                  <li class="active"><a href="#register" data-toggle="tab">Register</a></li>
-                  <li><a href="#login" data-toggle="tab">Login</a></li>
-                </ul><!--Tabs End-->
-              </div>
-              
-              <!--Registration Form Contents-->
-              <div class="tab-content">
-                <div class="tab-pane active" id="register">
-                  <h3>Register Now !!!</h3>
-                  <p class="text-muted">Be cool and join today. Meet millions</p>
-                  
-                  <!--Register Form-->
-                  <form name="registration_form" id='registration_form' class="form-inline">
-                    <div class="row">
-                      <div class="form-group col-xs-6">
-                        <label for="firstname" class="sr-only">First Name</label>
-                        <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name"/>
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="lastname" class="sr-only">Last Name</label>
-                        <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name"/>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="email" class="sr-only">Email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email"/>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="password" class="sr-only">Password</label>
-                        <input id="password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
-                      </div>
+
+
+        <div class="container" style="width: 50%; margin-top: 120px; ">
+            <div class="logo" style="z-index: 1000; margin-top:-30px"></div>
+
+
+            <h1 style="color: white; text-align: center; padding-bottom: 30px; margin-top: 90px;">
+                Let's get you ready to connect
+            </h1>
+
+            <div class="form-outer">
+                <form action = "#">
+                    <div class="page">
+                        <div class="field" >
+                            <input type="text" placeholder="Username" />
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Password" />
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Retype Password" />
+                        </div>
+                        <div class="field">
+                            <button class="btn start">Register</button>
+                        </div>
                     </div>
 
+                    <div class="page">
+                        <div class="field" >
+                            <select>
+                                <option value="Commitment Level" disabled selected>Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <select>
+                                <option value="Commitment Level" disabled selected>Commitment Level</option>
+                                <option>Amateur</option>
+                                <option>Professional</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <select>
+                                <option value="Commitment Level" disabled selected>Speciality</option>
+                                <option>Vocal</option>
+                                <option>Drums</option>
+                                <option>Triangle</option>
+                                <option>Money</option>
+                              </select>
+                        </div>
+
+                        <div class="field">
+                            <select>
+                                <option value="Commitment Level" disabled selected>Genre</option>
+                                <option>Lo-Fi</option>
+                                <option>Swing</option>
+                                <option>EDM</option>
+                                <option>Classical</option>
+                            </select>
+                        </div>
 
 
-                    <div class="row">
-                      <p class="birth"><strong>Tell us a bit more about yourself</strong></p>
-                      <div>
-                        <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="commitmentLevel">
-                          <option value="Commitment Level" disabled selected>Commitment Level</option>
-                          <option>Amateur</option>
-                          <option>Professional</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="speciality">
-                          <option value="Commitment Level" disabled selected>Speciality</option>
-                          <option>Vocal</option>
-                          <option>Drums</option>
-                          <option>Triangle</option>
-                          <option>Money</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="genre">
-                          <option value="Commitment Level" disabled selected>Genre</option>
-                          <option>Lo-Fi</option>
-                          <option>Swing</option>
-                          <option>EDM</option>
-                          <option>Classical</option>
-                        </select>
-                      </div>           
+                        <div class="field btns">
+                            <button class="previous btn 1" style="display:inline-block;">Previous</button>
+                            <button class="next btn 1">Next</button>
+                        </div>
+
                     </div>
 
-                    <div class="form-group gender">
-                      <label class="radio-inline">
-                        <input type="radio" name="optradio" checked>Male
-                      </label>
-                      <label class="radio-inline">
-                        <input type="radio" name="optradio">Female
-                      </label>
+                    <div class="page">
+                        <div class="field" >
+                            <select>
+                                <option value="Commitment Level" disabled selected>Vocals, Guitar, Drums, etc</option>
+                                <option>Vocals</option>
+                                <option>Guitar</option>
+                                <option>Drums</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <select>
+                                <option value="Commitment Level" disabled selected>Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <select>
+                                <option value="Commitment Level" disabled selected>Lo-Fi, Swing, EDM, etc</option>
+                                <option>Lo-Fi</option>
+                                <option>Swing</option>
+                                <option>EDM</option>
+                                <option>Classical</option>
+                            </select>
+                        </div>
+
+
+                        <div class="field btns">
+                            <button class="previous btn 2" style="display:inline-block;">Previous</button>
+                            <button class="next btn 2">Next</button>
+                        </div>
+
                     </div>
 
-                    <div class="row">
-                      <p class="birth"><strong>What genre of artist are you looking for?</strong></p>
-                      <div>
-                        <label for="month" class="sr-only"></label>
-                        <select class="form-control" id="wantedGenre">
-                          <option value="Commitment Level" disabled selected>Wanted Genre</option>
-                          <option>Lo-Fi</option>
-                          <option>Swing</option>
-                          <option>EDM</option>
-                          <option>Classical</option>
-                        </select>
-                      </div>
-                  </div>
 
-                  </form><!--Register Now Form Ends-->
-                  <p><a href="#">Already have an account?</a></p>
-                  <button class="btn btn-primary">Register Now</button>
-                </div><!--Registration Form Contents Ends-->
-
+                </form>
             </div>
+
+
         </div>
+
     </div>
-
-   
-
-
 
   <!-- Scripts
     ================================================= -->
