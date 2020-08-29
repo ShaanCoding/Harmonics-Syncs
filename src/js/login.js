@@ -24,7 +24,7 @@ $(document).ready(
 
                 log_in(name, pass, function (data, status) {
                     if (status == "success" && data == "success") {
-                        window.location.href = "../explore/index.php";
+                        window.location.href = "../main/explore.php";
                     } else {
                         console.log(data);
                     }
