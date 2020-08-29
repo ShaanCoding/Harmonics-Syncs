@@ -14,7 +14,7 @@ p {
 
   
   .square {
-    top: 8%;
+    top: 52.5px;
     height: 100%;
     width: 70%;
     background-color: black;
@@ -24,6 +24,10 @@ p {
     transform: translate(0, 0%);
 }
 
+  .background{
+    height: 100%;
+    width: 100%;
+  }
 
   .bg-image {
     /* The image used */
@@ -52,6 +56,25 @@ p {
     background-color: #5D5958!important;
 }
 
+.feed{
+  position:absolute;
+  transform: translate(-50%);
+  left:50%;
+  top: 20%;
+  /*
+  border-style:solid;
+  border-color: white;
+  */
+}
+
+.feed img{
+  position: relative;
+  transform: translate(-50%);
+  left:50%;
+
+
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
@@ -66,6 +89,7 @@ p {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    
   }
   
   /* Change the color of links on hover */
@@ -76,7 +100,7 @@ p {
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: #4CAF50;
+    background-color: transparent;
     color: white;
   }
 
@@ -89,9 +113,13 @@ p {
 .topnav-centered a {
   float: none;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
+  z-index: 1000;
+  background-image: url(../assets/icons/harmonics2.png);
+  background-size:contain ;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bio {
@@ -105,13 +133,13 @@ p {
  }
 
  .btn {
-  position: relative;
   border: none;
   background-color: transparent;
   padding: 14px 28px;
-  font-size: 12px;
+  font-size: 7px;
   cursor: pointer;
   display: inline-block;
+  transform: translate(-50%);
 }
 
 /* On mouse-over */
@@ -122,11 +150,13 @@ p {
 
 .like {
   color: grey;
-  left: 80%;
   background-image: url(../assets/icons/heart.png);
   background-size:contain ;
   background-position: center;
   background-repeat: no-repeat;
+  position: absolute;
+  top: 70%;
+  left: 65%;
   
   }
   .like:hover {
@@ -144,6 +174,9 @@ p {
     background-size:contain ;
     background-position: center;
     background-repeat: no-repeat;
+    position: absolute;
+    top: 70%;
+    left: 35%;
     
     }
     .dislike:hover {
@@ -161,6 +194,9 @@ p {
       background-size:contain ;
       background-position: center;
       background-repeat: no-repeat;
+      position: absolute;
+      top: 70%;
+      left: 57.5%;
       
       }
       .next_song:hover {
@@ -177,6 +213,9 @@ p {
         background-size:contain ;
         background-position: center;
         background-repeat: no-repeat;
+        position: absolute;
+        top: 70%;
+        left: 42.5%;
         
         }
         .previous_song:hover {
@@ -193,6 +232,9 @@ p {
           background-size:contain ;
           background-position: center;
           background-repeat: no-repeat;
+          position: absolute;
+          top: 70%;
+          left: 50%;
           
           }
           .play:hover {
