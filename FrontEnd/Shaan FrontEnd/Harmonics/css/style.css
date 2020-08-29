@@ -2824,12 +2824,12 @@ input:focus{outline:none;}
   background-image: url(../assets/icons/harmonics.png);
 
   /* Full height */
-  height: 30%;
-  width: 60%;
+  height: 20%;
+  width: 40%;
 
-  position: fixed;
+  position: absolute;
   left: 50%;
-  top: 10%;
+
   transform: translate(-50%);
     
   /* background color*/
@@ -2843,3 +2843,66 @@ input:focus{outline:none;}
   z-index:20;
   
     }
+
+#select{
+  color: black;
+  font-weight: normal;
+}
+
+.container .form-outer{
+
+  width: 100%;
+  /*overflow: hidden;*/
+
+}
+
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+
+.container .form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+  transform: translate(-50%);
+}
+
+.container .form-outer form .page .field{
+width: 100%;
+text-align: center;
+}
+
+.container .form-outer form .page .field input{
+  width: 100%;
+  }
+
+  form .page .field button{
+    width: 100%;
+    height: calc(100% + 5px);
+    border: none;
+    background: lightgrey;
+    margin-top: -20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+  }
+  form .page .field button:hover{
+    background: #000;
+  }
+  form .page .btns button{
+    margin-top: -20px!important;
+  }
+  form .page .btns button.prev{
+    margin-right: 3px;
+    font-size: 17px;
+  }
+  form .page .btns button.next{
+    margin-left: 3px;
+  }
+
+
