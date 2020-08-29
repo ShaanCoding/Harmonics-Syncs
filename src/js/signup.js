@@ -1,21 +1,3 @@
-
-/**
- * API point for registrations
- * 
- * Method Id: 1
- * name: name
- * user: username
- * pass: password
- * roles: roless
- * instrument: instrument
- * gender: gender
- * bio: bio
- * pfp: pfp
- * genre: genre
- * songs: songs
- * level: level (beginner etc)
- */
-
 function add_user(_name, _username, _password, _roles, _instrument, _gender, _bio, _pfp, _genres, _songs, _level, callback) {
     contact_api(
 {
@@ -59,12 +41,12 @@ $(document).ready(
 
                 add_user(name, user, pass, roles, instruments, gender, bio, pfp, genres, songs, level ,
                     function (data, status) {
-                        if (status == 'success' && data == 'sucess') {
+                        if (status == 'success' && data == 'success') {
                             // redirect to explore
                             console.log("Added!");
                         } else {
                             // throw an error
-                            console.log(status);
+                            console.log(data);
                         }
                     });
 
