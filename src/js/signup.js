@@ -1,4 +1,4 @@
-function add_user(_name, _username, _password, _roles, _instrument, _gender, _bio, _pfp, _genres, _songs, _level, callback) {
+function add_user(_name, _username, _password, _roles, _gender, _bio, _pfp, _genres, _songs, _level, callback) {
     contact_api(
 {
             m: 1,
@@ -6,7 +6,6 @@ function add_user(_name, _username, _password, _roles, _instrument, _gender, _bi
             user: _username,
             pass: _password,
             roles: _roles,
-            instrument: _instrument,
             gender: _gender,
             bio: _bio,
             pfp: _pfp,
@@ -30,7 +29,6 @@ $(document).ready(
                 let user = $('#username').val();
                 let pass = $('#password').val();
                 let roles = $('#roles').val();
-                let instruments = $('#instruments').val();
                 let gender = $('#gender').val();
                 let bio = $('#biography').val();
                 let pfp = $('#profile').val();
@@ -39,11 +37,12 @@ $(document).ready(
                 let level = $('#level').val();
 
 
-                add_user(name, user, pass, roles, instruments, gender, bio, pfp, genres, songs, level ,
+                add_user(name, user, pass, roles, gender, bio, pfp, genres, songs, level ,
                     function (data, status) {
                         if (status == 'success' && data == 'success') {
                             // redirect to explore
                             console.log("Added!");
+                            
                         } else {
                             // throw an error
                             console.log(data);
