@@ -5,7 +5,7 @@
  * 
  * contains all the util functions to interact with the users database
  * 
- * @author Shaan Khan
+ * @author Jacky Wu
  */
 
 require_once('../include/database.php');
@@ -19,6 +19,32 @@ class Matches
         $get_users = $sql->prepare('SELECT * FROM matches');
         $get_users->execute();
         return $get_users->fetchAll();
+    }
+
+    public function GetAllMatchesFromUser1($user1)
+    {
+        $sql = $GLOBALS['db'];
+        $get_users = $sql->prepare('SELECT * FROM matches WHERE user1=:user1');
+        $get_users->bindValue(':user1', $user1);
+        $get_users->execute();
+        return $get_users->fetchAll();
+    }
+
+    public function GetAllMatchesFromUser2($user2)
+    {
+        $sql = $GLOBALS['db'];
+        $get_users = $sql->prepare('SELECT * FROM matches WHERE user2=:user2');
+        $get_users->bindValue(':user2', $user2);
+        $get_users->execute();
+        return $get_users->fetchAll();
+    }
+
+    public function GetAllMatchesFromUser($user)
+    {
+        $matches1 = $this->GetAllMatchesFromUser1($user);
+        $matches2 = $this->GetAllMatchesFromUser2($user);
+        $merged = array_merge($matches1, $matches2);
+        return $merged;
     }
 
     public function AddMatch($user1, $user2)
@@ -72,5 +98,4 @@ class Matches
 
         return false;
     }
-    
 }

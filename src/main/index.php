@@ -78,31 +78,13 @@ if ($current_session) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index-register.html"><img src="images/logo.png" alt="logo" height="40" /></a>
+          <a class="navbar-brand" href="<?= LANDING_PAGE ?>"><img src="images/logo.png" alt="logo" height="40" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right main-menu">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
-              <ul class="dropdown-menu newsfeed-home">
-                <li><a href="index.html">Landing Page 1</a></li>
-                <li><a href="index-register.html">Landing Page 2</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
-              <ul class="dropdown-menu newsfeed-home">
-                <li><a href="newsfeed.html">Newsfeed</a></li>
-                <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                <li><a href="newsfeed-friends.html">My friends</a></li>
-                <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                <li><a href="newsfeed-images.html">Images</a></li>
-                <li><a href="newsfeed-videos.html">Videos</a></li>
-              </ul>
-            </li>
-            <li class="dropdown"><a href="contact.html">Contact</a></li>
+            <li class="dropdown"><a href="<?= LANDING_PAGE ?>">Home</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
@@ -155,8 +137,8 @@ if ($current_session) {
                 </div>
                 <div class="row">
                   <div class="form-group col-xs-6">
-                    <label for="register-pfp" class="sr-only">Profile Image</label>
-                    <input required id="register-pfp" class="form-control input-group-lg" type="text" name="pfp" title="Enter pfp" placeholder="Image link" />
+                    <label for="register-pfp" class="sr-only">Handle</label>
+                    <input required id="register-pfp" class="form-control input-group-lg" type="text" name="pfp" title="Enter Handle" placeholder="Handle" />
                   </div>
                 </div>
                 <div class="row">
@@ -282,6 +264,7 @@ if ($current_session) {
   </div>
 
   <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.appear.min.js"></script>
