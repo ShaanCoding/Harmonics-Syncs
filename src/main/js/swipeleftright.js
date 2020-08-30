@@ -14,7 +14,7 @@ function SendSwipe(_userid, _targetid, _swiped, callback) {
 }
 
 $(document).ready(function () {
-
+  
   let sce_max = $("#sce_max").val();
   let localid = $("#sce_local").val();
   let current_swipe = 1;

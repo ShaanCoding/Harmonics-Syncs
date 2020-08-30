@@ -106,8 +106,10 @@ h1 {
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #272727;
     overflow: hidden;
+    background-color: transparent;
+    width: 100%;
+    float: right;
   }
   
   /* Style the links inside the navigation bar */
